@@ -9,8 +9,12 @@ class Log extends Model
 {
     use HasFactory;
 
-
     protected $casts = [
         'params' => 'json'
     ];
+
+    public static function getCountryStatCacheKey()
+    {
+        return 'statistics:country-logs';
+    }
 }

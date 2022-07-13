@@ -31,11 +31,12 @@ class CalculateStatisticsCommand extends Command
      */
     public function handle()
     {        
-        $key = 'statistics:country-logs-';
-        $currentDate = Carbon::now()->format('Y-m-d');
+        $key = Log::getCountryStatCacheKey();
 
-        $countryStatisticsCached = Cache::rememberForever($key . $currentDate, function() {
-            echo 'DB Hit';
+
+        $countryStatisticsCached = Cache::rememberForever($key, function() {
+            $this->info('DB Hit');
+            // Normally I'd place this on a repository class, but to make it simple, I just used the Query builder here
             $countryStatistics = Log::query()
                 ->select('params->geolocation->display as country')
                 ->addSelect(DB::raw('count(id) as total'))
