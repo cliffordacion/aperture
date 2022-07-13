@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Log;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
 class StatisticsController extends Controller
