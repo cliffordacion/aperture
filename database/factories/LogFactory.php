@@ -29,7 +29,7 @@ class LogFactory extends Factory
                     "name" => fake()->sentence(3),
                 ],
                 "geolocation" => [
-                    "display" => fake()->country(),
+                    "display" => fake()->randomElement(['United Kingdom', 'USA', 'Canada', 'Philipines', 'Singapore']),
                     "language" => [
                         "lang" => "en-GB",
                         "accept-language" => "en-GB,en-US;q=0.8,en;q=0.6"
