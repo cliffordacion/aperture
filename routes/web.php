@@ -3,7 +3,6 @@
 use App\Http\Controllers\StatisticsController;
 use Illuminate\Support\Facades\Route;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +19,6 @@ Route::get('/', function () {
 });
 
 Route::get('/stats/logs/country', [StatisticsController::class, 'index']);
+
+
+Route::get('/xml-parser');
